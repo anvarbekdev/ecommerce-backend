@@ -64,7 +64,7 @@
       <a
         target="_blank"
         style="display: flex; justify-items: center; gap: 4px"
-        href="https://github.com/tonicdev07"
+        href="https://github.com/tonicdev09"
       >
         <img
           src="https://cdn-icons-png.flaticon.com/128/2111/2111432.png"
@@ -72,7 +72,7 @@
           width="22"
           height="22"
         />
-        https://github.com/tonicdev07</a
+        https://github.com/tonicdev09</a
       >
     </div>
     <div
