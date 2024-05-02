@@ -1,6 +1,6 @@
 ## A great fullstack ecommerce app
 
-<h3><a href="https://github.com/tonicdev09/ecommerce-backend" style="font-size: 32px">Go to the api</a></h3>
+<h3><a href="https://github.com/tonicdev09/ecommerce-api" style="font-size: 32px">Go to the api</a></h3>
 
 <div>    <div
       style="display: flex; justify-items: center; gap: 4px; margin-bottom: 4px"
