@@ -29,13 +29,13 @@ app.use("/api/user", useUser);
 app.use("/api", usePublic);
 
 // serving the frontend
-app.use(express.static(path.join(__dirname, "/dist")));
+// app.use(express.static(path.join(__dirname, "/dist")));
 
-app.get("*", function (_, res) {
-	res.sendFile(path.join(__dirname, "dist/index.html"), function (err) {
-		res.status(500).send(err);
-	});
-});
+// app.get("*", function (_, res) {
+// 	res.sendFile(path.join(__dirname, "dist/index.html"), function (err) {
+// 		res.status(500).send(err);
+// 	});
+// });
 
 app.use((req, res, next) => {
 	const error = new Error("INVALID ROUTE NOT WORKING");
