@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-const cors = require("cors");
+// const cors = require("cors");
 const useUser = require("./routes/userRoutes.js");
 const usePublic = require("./routes/publicRoutes.js");
 require("dotenv").config();
@@ -11,31 +11,31 @@ const cookieParser = require("cookie-parser");
 //MIDDILWARES
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(cookieParser());
-app.use(
-	cors({
-		origin: ["http://localhost:3000", "https://shop-2fgr.onrender.com"],
-		methods: ["GET", "POST", "PUT", "DELETE"],
-		credentials: true,
-	})
-);
+// app.use(
+// 	cors({
+// 		origin: ["http://localhost:3000", "https://shop-2fgr.onrender.com"],
+// 		methods: ["GET", "POST", "PUT", "DELETE"],
+// 		credentials: true,
+// 	})
+// );
 
 // ROUTES
 app.use("/api/user", useUser);
 app.use("/api", usePublic);
 
 // serving the frontend
-// app.use(express.static(path.join(__dirname, "/dist")));
+app.use(express.static(path.join(__dirname, "/dist")));
 
-// app.get("*", function (_, res) {
-// 	res.sendFile(path.join(__dirname, "dist/index.html"), function (err) {
-// 		res.status(500).send(err);
-// 	});
-// });
+app.get("*", function (_, res) {
+	res.sendFile(path.join(__dirname, "dist/index.html"), function (err) {
+		res.status(500).send(err);
+	});
+});
 
 app.use((req, res, next) => {
 	const error = new Error("INVALID ROUTE NOT WORKING");
